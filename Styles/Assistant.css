@@ -1,0 +1,1195 @@
+body {
+    _background-color: rgb(255, 226, 164);
+    _background-image: url("../images/stars-png-640.png");
+    font-family: Calibri;
+    font-size: 14px;
+}
+body > div[id] h2 {
+    background: #f0f0f0;
+    padding: 5px;
+    border: solid 1px #ccc;
+}
+body > div[id]:not(.Active) {
+    display: none;
+}
+input[type="text"] {
+    text-align: right;
+}
+input[type="number"] {
+    width: 30px;
+    text-align: right;
+    -moz-appearance: textfield;
+}
+input[type="button"]:not(.ExhaustBtn):not(.PlusBtn):not(.MinusBtn):not(.RerollBtn):not(.RemoveBtn):not(.UnlockBtn):not(.PurgeBtn) {
+    background: #053158;
+    color: #fff;
+    border: solid 1px #000;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+h1 {
+    vertical-align: middle;
+    display: inline-block;
+}
+h2 {
+    font-size: 16px;
+    margin: 10px 0;
+}
+h3 {
+    margin: 10px 0;
+}
+h2[data-display-toggler]:after,
+h3[data-display-toggler]:after {
+    content: "";
+    float: right;
+    border: solid 5px transparent;
+    border-top-color: #000;
+    margin-top: 7px;
+}
+h2[data-display-toggler].Active:after,
+h3[data-display-toggler].Active:after {
+    border-top-color: transparent;
+    border-bottom-color: #000;
+    margin-top: 2px;
+}
+h3[data-display-toggler] {
+    background: #000;
+    color: #fff;
+    margin: 5px 0;
+    padding: 3px 5px;
+}
+h3[data-display-toggler]:after {
+    border-top-color: #fff;
+}
+h3[data-display-toggler].Active:after {
+    border-bottom-color: #fff;
+}
+*[data-display-toggler]:not(.Active) + * {
+    display: none;
+}
+*[data-field="Summary"] {
+    margin: 12px 0;
+}
+*[data-field="Summary"] > * {
+    margin: 12px 0;
+}
+table {
+    border: solid 1px #000;
+    border-collapse: collapse;
+}
+thead {
+    text-align: center;
+}
+thead td {
+    background: #444;
+    color: #fff;
+    font-weight: bold;
+}
+td {
+    padding: 5px;
+    border: solid 1px #000;
+}
+td span {
+    display: inline-block;
+}
+
+.ActionLbl {
+    color: #999;
+    font-style: italic;
+}
+.Right {
+    text-align: right;
+}
+.Center {
+    text-align: center;
+}
+.Tabular {
+    display: table;
+}
+.Tabular > * {
+    display: table-row;
+}
+.Tabular > * > * {
+    display: table-cell;
+}
+
+table.UnitData tr:first-child td {
+    background: #444;
+    color: #fff;
+}
+
+.Requirement {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    vertical-align: middle;
+    background: url(../Images/tech-corrected.png);
+    background-size: 72px;
+    background-repeat: no-repeat;
+    background-position-y: 1px;
+}
+.Requirement.Green {
+    background-position-x: 0;
+}
+.Requirement.Red {
+    background-position-x: 33.3333%;
+}
+.Requirement.Blue {
+    background-position-x: 66.6666%;
+}
+.Requirement.Yellow {
+    background-position-x: 100%;
+}
+.Complexity {
+    margin: 15px 0;
+    font-weight: bold;
+}
+.Complexity:before {
+    content: "Complexity: ";
+}
+.Complexity.n1:after {
+    content: "Easy";
+    color: green;
+}
+.Complexity.n2:after {
+    content: "Medium";
+    color: orange;
+}
+.Complexity.n3:after {
+    content: "Hard";
+    color: red;
+}
+.PlanetTrait {
+    display: inline-block;
+    width: 14px;
+    height: 12px;
+    background: url(../Images/planet-traits-corrected.png);
+    background-size: cover;
+    vertical-align: middle;
+}
+.PlanetTrait.Industrial {
+    background-position-x: 50%;
+}
+.PlanetTrait.Cultural {
+    background-position-x: 100%;
+}
+
+.SummaryWrapper .PromissoryNote {
+    color: red;
+}
+.SummaryWrapper .Mech {
+    color: blue;
+}
+.SummaryWrapper .Leader {
+    color: brown;
+}
+.SummaryWrapper .Unit {
+    color: darkorchid;
+}
+.SummaryWrapper .Flagship {
+    color: coral;
+}
+.Notification {
+    color: red;
+    margin: 10px 0;
+}
+.FactionIcon {
+    display: inline-block;
+    vertical-align: middle;
+    background: url(../images/race-corrected.png);
+    background-repeat: no-repeat;
+    background-size: 300px;
+    width: 50px;
+    height: 50px;
+}
+.FlavorWrapper {
+    font-style: italic;
+    color: #aaa;
+}
+.Roll.Selected {
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    display: inline-block;
+    border: solid 1px #000;
+    border-bottom-color: #fff;
+    text-align: center;
+    vertical-align: middle;
+    position: relative;
+    z-index: 101;
+    background: #fff;
+}
+
+.ExhaustBtn {
+    background-image: url(../images/flip.png);
+    background-size: cover;
+    border: none;
+    background-color: transparent;
+    width: 40px;
+    height: 40px;
+}
+.Exhausted .ExhaustBtn {
+    transform: scaleX(-1);
+}
+.RemoveBtn {
+    background-image: url(../images/x.png);
+    background-size: cover;
+    background-color: transparent;
+    border: none;
+    width: 30px;
+    height: 30px;
+}
+.UnlockBtn {
+    background-image: url(../images/lock.png);
+    background-size: 29px;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: none;
+    width: 40px;
+    height: 40px;
+}
+.PurgeBtn {
+    background-image: url(../images/purge.png);
+    background-size: cover;
+    border: none;
+    background-color: transparent;
+    width: 30px;
+    height: 30px;
+}
+.RerollBtn {
+    background: none;
+    background-image: url(../images/reroll.png);
+    background-color: transparent;
+    background-size: cover;
+    border: none;
+    width: 30px;
+    height: 30px;
+    width: 28px;
+    height: 28px;
+    vertical-align: middle;
+    font-size: 0;
+}
+.MinusBtn, .PlusBtn {
+    background-image: url(../Images/plus.png);
+    background-size: contain;
+    border: none;
+    background-color: transparent;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    vertical-align: middle;
+}
+.MinusBtn {
+    background-image: url(../Images/minus.png);
+}
+.MinusBtn.Mini, .PlusBtn.Mini {
+    width: 20px;
+    height: 20px;
+}
+.CommandToken {
+    margin: auto;
+    width: 100px;
+    height: 100px;
+    border: solid 1px #000;
+    background-size: 165%;
+    background-position-y: 100%;
+    background-position-x: 1%;
+    clip-path: polygon(3% 6%, 60% 6%, 98% 73%, 98% 90%, 3% 90%)
+}
+.CommandToken.Fleet {
+    background-position-x: 96%;
+    background-position-y: 85%;
+    clip-path: polygon(2% 5%, 98% 5%, 98% 94%, 43% 94%, 2% 17%)
+}
+.EmptyMessage:empty::after, #summaryPage > *:empty::after {
+    content: "Empty";
+    color: #ccc;
+    padding: 10px 0;
+    display: block;
+}
+.Overlay {
+    position: fixed;
+    z-index: 200;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0.3;
+    background: #000;
+}
+
+.ConfirmationDialog {
+    position: fixed;
+    z-index: 201;
+    left: 50%;
+    top: 50%;
+    background: #fff;
+    padding: 10px;
+    border: solid 1px #000;
+    transform: translate(-50%, -50%);
+}
+.ConfirmationDialog .Heading {
+    margin: -10px;
+    margin-bottom: 10px;
+    background: #000;
+    color: #fff;
+    padding: 10px;
+    font-weight: bold;
+}
+.ConfirmationDialog .Heading + * {
+    margin-bottom: 10px;
+}
+
+
+
+
+
+.TopMenu {
+    padding: 10px;
+    padding-bottom: 0;
+    box-shadow: 2px 2px 2px 2px #444;
+    position: fixed;
+    z-index: 200;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: #fff;
+    overflow: hidden;
+    max-height: 100%;
+    _transition: max-height 0.25s linear;
+    _transition-duration: 1500ms;
+}
+.TopMenu .TokenWrapper {
+    display: flex;
+    justify-content: space-between;
+}
+.TopMenu .Commands {
+    display: flex;
+    justify-content: space-between;
+}
+.TopMenu input[type="number"] {
+    width: 25px;
+}
+.TopMenu .Header {
+    background: #000;
+    color: #fff;
+    margin: -10px;
+    margin-bottom: -10px;
+    margin-bottom: unset;
+    text-align: center;
+}
+.TopMenu #factionTitleLbl {
+    display: inline-block;
+    font-size: 18px;
+    vertical-align: middle;
+    margin: 5px
+}
+.TopMenu .Footer {
+    margin-left: -10px;
+    margin-right: -10px;
+    margin-top: 10px;
+    background: #efefef;
+    border-top: solid 1px #ccc;
+    padding: 5px
+}
+.TopMenu .Footer:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+.TopMenu .Footer > *:first-child {
+    float: left;
+}
+.TopMenu .Footer > *:last-child {
+    float: right;
+}
+.TopMenu .Footer img {
+    width: 50px;
+    vertical-align: middle
+}
+.TopMenu .Footer .Commands {
+    display: inline-block;
+    vertical-align: middle;
+}
+.TopMenu .RaceComodity {
+    background-image: url("../images/commodity.png");
+    background-size: contain;
+    width: 50px;
+    height: 50px;
+    vertical-align: middle;
+    display: inline-block;
+    text-align: center;
+    line-height: 50px;
+    font-size: 36px;
+    color: #fff;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+.TopMenu #factionTitleLbl:after {
+    content: "";
+    display: inline-block;
+    right: 15px;
+    position: absolute;
+    border: solid 7px transparent;
+    border-bottom-color: #fff;
+    border-top-color: transparent;
+    top: 2px;
+}
+.TopMenu .Inactive #factionTitleLbl:after {
+    border-top-color: #fff;
+    border-bottom-color: transparent;
+    top: 10px;
+}
+
+
+
+.TabControl {
+    border-bottom: solid 1px #000;
+    margin-right: -10px;
+    margin-left: -10px;
+    margin-top: -10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 10px;
+    background: #666;
+}
+.TabControl > * {
+    margin-bottom: -1px;
+    padding: 5px;
+    display: inline-block;
+    height: 20px;
+    line-height: 20px;
+    vertical-align: bottom;
+    border: solid 1px #000;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+
+    text-decoration: none;
+
+    font-weight: bold;
+    color: #000;
+    background: #fff;
+}
+.TabControl > *.Active {
+    border-bottom-color: #fff;
+    color: red;
+}
+.TabControl > *[data-page="gamePage"] {
+    float: right;
+}
+
+
+
+.Summary.Template {
+    margin-top: 10px;
+}
+.Summary.Template .Header [data-field="Title"] {
+    float: left;
+    color: red;
+}
+.Summary.Template .Header [data-field="Source"] {
+    float: right;
+    color: blue;
+}
+.Summary.Template .Header:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+.Unit.Template {
+    margin-bottom: 10px;
+}
+.Unit.Template:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+.Unit.Template  > *:first-child {
+    float: left;
+    width: 120px;
+}
+.Unit.Template > *:first-child + * {
+    float: left;
+    _padding: 0 10px;
+    padding-left: 10px;
+    width: calc(100% - 130px);
+}
+.Unit.Template h3 {
+    margin: 0;
+}
+.Unit.Template .Summary {
+    clear: both;
+    margin: 10px 0;
+    color: blue;
+}
+.Unit.Template .RollState {
+    margin-top: 10px;
+    color: blue;
+}
+.Unit.Template .Features > * {
+    display: block;
+    margin: 3px 0;
+}
+.Unit.Template .RequirementList {
+    float: right;
+    margin-bottom: 5px;
+}
+.Unit.Template table {
+    width: 100%;
+}
+.RollTemplate {
+    margin-bottom: 10px;
+}
+.RollTemplate h3 {
+    display: inline-block;
+    margin: 0;
+}
+.RollTemplate h3.Selected {
+    background: #fff;
+}
+.RollTemplate .AddDieBtn {
+    float: right;
+}
+.RollTemplate:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+.RollModifierTemplate {
+    position: absolute;
+    border: solid 1px #000;
+    background: #fff;
+    padding: 2px;
+}
+.LegendaryPlanetTemplate * [data-field="PlanetName"] {
+    float: right;
+    color: blue
+}
+
+
+/* pages*/
+
+body.StartMode > *:not(#startPage) {
+    display: none;
+}
+body.StartMode > #startPage {
+    display: block;
+}
+body:not(.StartMode) > #startPage {
+    display: none;
+}
+#startPage .DataWrapper {
+    display: none;
+}
+#startPage .DataWrapper + * {
+    margin: 10px 0;
+}
+#startPage .DataWrapper.Active {
+    display: block;
+}
+#startPage .DataWrapper.Active + * {
+    display: none;
+}
+#startPage > .Header {
+    background: #000;
+    background-image: url(../images/galaxy1.webp);
+    background-size: cover;
+    margin: -10px;
+    margin-bottom: 20px;
+    padding: 10px;
+    box-shadow: 2px 2px 2px 2px #444;
+}
+#startPage .Header img {
+    max-width: 100%
+}
+#startPage > .Header h3 {
+    color: #fff;
+    margin: 0;
+    text-align: center;
+}
+#startPage .Tabular {
+    width: 100%;
+    border-collapse: collapse;
+}
+    #startPage .Tabular > * > * {
+        padding: 5px;
+        border: solid 1px #ccc;
+    }
+    #startPage .Tabular > *:first-child > * {
+        background: #f0f0f0;
+        font-weight: bold;
+        font-size: 16px;
+        text-align: center;
+    }
+
+
+#planetsPage h3 {
+    margin: 10px 0;
+}
+#planetsTbl {
+    width: 100%;
+}
+#planetsTbl tfoot {
+    background: #f0f0f0;
+}
+#planetsTbl td.Technology {
+    text-align: center;
+}
+#planetsTbl > tbody > tr > td,
+#planetsTbl > tbody > tr.TemplateEditor ~ tr:nth-child(2n) > td {
+    background: #ccc;
+}
+#planetsTbl > tbody > tr:nth-child(2n) > td,
+#planetsTbl > tbody > tr.TemplateEditor ~ tr:nth-child(2n + 1) > td {
+    background: #fefefe;
+}
+#planetsTbl > tbody > tr > td:last-child {
+    white-space: nowrap;
+}
+#planetsTbl td[data-faction-id]:before,
+#planetsPage *[data-faction-id]:before {
+    content: "";
+    display: inline-block;
+    background-image: url(../images/race-corrected.png);
+    background-size: 133px;
+    width: 22px;
+    height: 22px;
+    background-size: 186px;
+    width: 32px;
+    height: 32px;
+    vertical-align: middle;
+}
+
+#planetsTbl tr.Legendary td[data-field='Name']:before {
+    content: "";
+    height: 16px;
+    width: 16px;
+    background-image: url(../images/legendary.png);
+    background-size: cover;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 3px;
+}
+
+tr.Exhausted td:not(:last-child) {
+    opacity: 0.3;
+}
+
+div .Exhausted [data-field='Summary'],
+div .Exhausted .Summary { /* technology page*/
+    opacity: 0.2;
+}
+
+.TemplateEditor input[type="checkbox"] {
+    vertical-align: middle;
+}
+.TemplateEditor table {
+    border: none;
+    width: 100%;
+}
+.TemplateEditor > td {
+    padding: 0;
+}
+.TemplateEditor td {
+    border: none;
+    background: #efefef;
+}
+.TemplateEditor td:not(:last-child) {
+    border-right: solid 1px #999;
+}
+.TemplateEditor td input[type="text"] {
+    width: 50px;
+}
+
+
+
+#technologyPage .Template h3 {
+    cursor: pointer;
+}
+#technologyPage .Template.Faction h3::after {
+    content: " (faction)";
+    font-weight: normal;
+    color: red;
+}
+#technologyPage .Template:not(.Active) .Summary { /* todo Unit data summary is hidden*/
+    display: none;
+}
+#technologyPage .Template .Summary .Content {
+    margin-bottom: 10px;
+}
+#technologyPage .Template .Template h3 { /* hide unit heading */
+    display: none;
+}
+#technologyPage .Template .RequirementList {
+    float: right;
+}
+#technologyPage #availableLbl.PlanetsIncluded + * *[data-planet]:after {
+    content: attr(data-planet);
+    font-weight: normal;
+    color: red;
+}
+
+#leaderPage #owmLeaderWrapper .UnlockBtn {
+    background-image: url(../images/x.png);
+}
+#leaderPage *[data-field="Type"] {
+    float: right;
+    color: blue;
+}
+#leaderPage .UnlockWrapper {
+    margin-bottom: 12px;
+}
+
+
+
+
+
+
+
+#promissoryPage #selectedPnGenericWrapper h3 {
+    display: none;
+}
+
+#gamePage .SummaryBtn:not(.Active) {
+    display: none;
+}
+#gamePage .RaceDdl option.UserFaction {
+    color: red;
+}
+#gamePage .Tabular .Label {
+    padding: 3px;
+}
+#gamePage .Tabular .Label:first-child {
+    padding-left: 0px;
+}
+#gamePage .Tabular .Label:last-child {
+    padding-right: 0px;
+}
+
+
+
+
+.SummaryLbl:not(.Set),
+.SummaryLbl:not(.Set) + * {
+    display: none;
+}
+
+
+
+#combatPage .BattleWrapper input[type="button"]:not(.MinusBtn):not(.PlusBtn) {
+    display: none;
+}
+#combatPage .BattleWrapper input[type="button"].Active:not(.MinusBtn):not(.PlusBtn) {
+    display: block;
+}
+#combatPage > .RollModifierTemplate {
+    display: none;
+}
+#combatPage h3 {
+    margin: 0;
+}
+#combatPage > * {
+    margin: 10px 0;
+}
+.BattleWrapper .HitWrapper:empty {
+    display: none;
+}
+.BattleWrapper .HitWrapper:empty ~ .Notification {
+    display: none;
+}
+.BattleWrapper .HitWrapper {
+    background: #f0f0f0;
+    padding: 5px;
+}
+.BattleWrapper .MinusPlusAction {
+    display: inline-block;
+    vertical-align: middle;
+}
+.BattleWrapper .Actions {
+    margin-top: 10px;
+}
+.BattleWrapper .Actions > * {
+    float: left;
+    margin-right: 5px;
+    margin-bottom: 5px;
+}
+
+
+#combatWrapper .Template h3 {
+    margin: 0;
+}
+#combatWrapper.Thumbs {
+    display: block;
+    border: none;
+}
+#combatWrapper.Thumbs tr {
+    display: block;
+    width: 33.33%;
+    position: relative;
+    float: left;
+}
+#combatWrapper.Thumbs::after {
+    content:"";
+    display: block;
+    clear: both;
+}
+#combatWrapper.Thumbs td[data-field] {
+    display: none;
+}
+#combatWrapper.Thumbs tr:nth-child(2n + 1) {
+    display: none;
+}
+#combatWrapper.Thumbs .UnitFeatures {
+    display: none;
+}
+#combatWrapper.Thumbs tr > * {
+    display: block;
+    border: none;
+}
+#combatWrapper.Thumbs tr .UnitImage {
+    _display: none;
+}
+#combatWrapper.Thumbs tr td:last-child {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    left: 0;
+    right: 0;
+    transform: translateY(-50%);
+    text-align: center;
+    border: none;
+}
+
+#combatWrapper.Thumbs tr .PlusBtn {
+    position: absolute;
+    right: 5px;
+    bottom: -25px;
+}
+#combatWrapper.Thumbs tr .MinusBtn {
+    position: absolute;
+    left: 5px;
+    bottom: -25px;
+}
+
+#combatWrapper.Thumbs h3 {
+    text-align: center;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+#combatWrapper.Thumbs tr .UnitCount {
+    -webkit-appearance: none;
+    -moz-appearance: textfield;
+    border: solid 1px #000;
+    text-align: center !important;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    background: rgba(255, 255, 255, 0.8);
+}
+
+#combatWrapper.Thumbs tr [data-field="Passive"]:empty {
+    display: none;
+}
+#combatWrapper.List {
+    display: table;
+    border-collapse: collapse;
+    border: solid 1px #000;
+}
+#combatWrapper.List tr > * {
+    padding: 2px;
+}
+#combatWrapper.List tr .UnitImage {
+    display: none;
+}
+#combatWrapper.List tr .UnitCount {
+}
+#combatWrapper.List tr [data-field="Passive"]:empty {
+    display: none;
+}
+.HitWrapper *[data-field="Title"].Selected {
+    border: solid 1px #000;
+    border-bottom-color: #fff;
+    position: relative;
+    z-index: 101;
+    padding-left: 2px;
+    padding-right: 2px;
+}
+
+
+.UnitImage {
+    clear: both;
+    background-image: url(../images/units-corrected.png);
+    background-size: cover;
+    width: 100px;
+    height: 100px;
+    _filter: invert(49%) sepia(88%) saturate(1925%) hue-rotate(159deg) brightness(91%) contrast(101%);
+}
+/*"Carrier": 1, "Cruiser": 2, "Destroyer": 3,"Dreadnought": 4, "Fighter": 5, "War Sun": 6, "Flagship": 7, "Infantry": 8, "Mech": 9, "Space Dock": 10, "PDS": 11*/
+.UnitImage[data-unit-type="1"] {
+    background-position-x: 50%;
+}
+.UnitImage[data-unit-type="2"] {
+    background-position-x: 20%;
+}
+.UnitImage[data-unit-type="3"] {
+    background-position-x: 40%;
+}
+.UnitImage[data-unit-type="4"] {
+    background-position-x: 30%;
+}
+.UnitImage[data-unit-type="5"] {
+    background-position-x: 70%;
+}
+.UnitImage[data-unit-type="6"] {
+    background-position-x: 10%;
+}
+.UnitImage[data-unit-type="7"] {
+    background-position-x: 0%;
+}
+.UnitImage[data-unit-type="8"] {
+    background-position-x: 80%;
+}
+.UnitImage[data-unit-type="9"] {
+    background-position-x: 100%;
+}
+.UnitImage[data-unit-type="10"] {
+    background-position-x: 90%;
+}
+.UnitImage[data-unit-type="11"] {
+    background-position-x: 60%;
+}
+
+
+.FactionIcon[data-faction='1'] {
+    background-position: 60% 0%;
+}
+.FactionIcon[data-faction='2'] {
+    background-position: 80% 0%;
+}
+.FactionIcon[data-faction='3'] {
+    background-position: 100% 0%;
+}
+.FactionIcon[data-faction='4'] {
+    background-position: 60% 66.6666%;
+}
+.FactionIcon[data-faction='5'] {
+    background-position: 60% 33.3333%;
+}
+.FactionIcon[data-faction='6'] {
+    background-position: 40% 33.3333%;
+}
+.FactionIcon[data-faction='7'] {
+    background-position: 20% 33.3333%;
+}
+.FactionIcon[data-faction='8'] {
+    background-position: 80% 33.3333%;
+}
+.FactionIcon[data-faction='9'] {
+    background-position: 80% 66.6666%;
+}
+.FactionIcon[data-faction='10'] {
+    background-position: 20% 66.6666%;
+}
+.FactionIcon[data-faction='11'] {
+    background-position: 100% 33.3333%;
+}
+.FactionIcon[data-faction='12'] {
+    background-position: 0% 33.3333%;
+}
+.FactionIcon[data-faction='13'] {
+    background-position: 40% 0%;
+}
+.FactionIcon[data-faction='14'] {
+    background-position: 0% 0%;
+}
+.FactionIcon[data-faction='15'] {
+    background-position: 40% 66.6666%;
+}
+.FactionIcon[data-faction='16'] {
+    background-position: 0 66.66666%;
+}
+.FactionIcon[data-faction='17'] {
+    background-position: 20% 0;
+}
+.FactionIcon[data-faction='18'] {
+    background-position: 40% 100%;
+}
+.FactionIcon[data-faction='19'] {
+    background-position: 60% 100%;
+}
+.FactionIcon[data-faction='20'] {
+    background-position: 100% 66.6666%;
+}
+.FactionIcon[data-faction='21'] {
+    background-position: 20% 100%;
+}
+.FactionIcon[data-faction='22'] {
+    background-position: 100% 100%;
+}
+.FactionIcon[data-faction='23'] {
+    background-position: 0% 100%;
+}
+.FactionIcon[data-faction='24'] {
+    background-position: 80% 100%;
+}
+
+body[data-faction-id="1"] .CommandToken {
+    background-image: url(../images/faction/faction1.jpg);
+}
+body[data-faction-id="2"] .CommandToken {
+    background-image: url(../images/faction/faction2.jpg);
+}
+body[data-faction-id="3"] .CommandToken {
+    background-image: url(../images/faction/faction3.jpg);
+}
+body[data-faction-id="4"] .CommandToken {
+    background-image: url(../images/faction/faction4.jpg);
+}
+body[data-faction-id="5"] .CommandToken {
+    background-image: url(../images/faction/faction5.jpg);
+}
+body[data-faction-id="6"] .CommandToken {
+    background-image: url(../images/faction/faction6.jpg);
+}
+body[data-faction-id="7"] .CommandToken {
+    background-image: url(../images/faction/faction7.jpg);
+}
+body[data-faction-id="8"] .CommandToken {
+    background-image: url(../images/faction/faction8.jpg);
+}
+body[data-faction-id="9"] .CommandToken {
+    background-image: url(../images/faction/faction9.jpg);
+}
+body[data-faction-id="10"] .CommandToken {
+    background-image: url(../images/faction/faction10.jpg);
+}
+body[data-faction-id="11"] .CommandToken {
+    background-image: url(../images/faction/faction11.jpg);
+}
+body[data-faction-id="12"] .CommandToken {
+    background-image: url(../images/faction/faction12.jpg);
+}
+body[data-faction-id="13"] .CommandToken {
+    background-image: url(../images/faction/faction13.jpg);
+}
+body[data-faction-id="14"] .CommandToken {
+    background-image: url(../images/faction/faction14.jpg);
+}
+body[data-faction-id="15"] .CommandToken {
+    background-image: url(../images/faction/faction15.jpg);
+}
+body[data-faction-id="16"] .CommandToken {
+    background-image: url(../images/faction/faction16.jpg);
+}
+body[data-faction-id="17"] .CommandToken {
+    background-image: url(../images/faction/faction17.jpg);
+}
+body[data-faction-id="18"] .CommandToken {
+    background-image: url(../images/faction/faction18.jpg);
+}
+body[data-faction-id="19"] .CommandToken {
+    background-image: url(../images/faction/faction19.jpg);
+}
+body[data-faction-id="20"] .CommandToken {
+    background-image: url(../images/faction/faction20.jpg);
+}
+body[data-faction-id="21"] .CommandToken {
+    background-image: url(../images/faction/faction21.jpg);
+}
+body[data-faction-id="22"] .CommandToken {
+    background-image: url(../images/faction/faction22.jpg);
+}
+body[data-faction-id="23"] .CommandToken {
+    background-image: url(../images/faction/faction23.jpg);
+}
+body[data-faction-id="24"] .CommandToken {
+    background-image: url(../images/faction/faction24.jpg);
+}
+
+#planetsTbl td[data-faction-id='14']:before {
+    background-position: 0% 0%;
+}
+#planetsTbl td[data-faction-id='17']:before {
+    background-position: 20% 0%;
+}
+#planetsTbl td[data-faction-id='13']:before {
+    background-position: 40% 0%;
+}
+#planetsTbl td[data-faction-id='1']:before {
+    background-position: 60% 0%;
+}
+#planetsTbl td[data-faction-id='2']:before {
+    background-position: 80% 0%;
+}
+#planetsTbl td[data-faction-id='3']:before {
+    background-position: 100% 0%;
+}
+#planetsTbl td[data-faction-id='12']:before {
+    background-position: 0% 0%;
+}
+#planetsTbl td[data-faction-id='7']:before {
+    background-position: 20% 33.333%;
+}
+#planetsTbl td[data-faction-id='6']:before {
+    background-position: 40% 33.333%;
+}
+#planetsTbl td[data-faction-id='5']:before {
+    background-position: 60% 33.333%;
+}
+#planetsTbl td[data-faction-id='8']:before {
+    background-position: 80% 33.333%;
+}
+#planetsTbl td[data-faction-id='11']:before {
+    background-position: 100% 33.333%;
+}
+#planetsTbl td[data-faction-id='16']:before {
+    background-position: 0% 66.666%;
+}
+#planetsTbl td[data-faction-id='10']:before {
+    background-position: 20% 66.666%;
+}
+#planetsTbl td[data-faction-id='15']:before {
+    background-position: 40% 66.666%;
+}
+#planetsTbl td[data-faction-id='4']:before {
+    background-position: 60% 66.666%;
+}
+#planetsTbl td[data-faction-id='9']:before {
+    background-position: 80% 66.666%;
+}
+#planetsTbl td[data-faction-id='20']:before {
+    background-position: 100% 66.666%;
+}
+#planetsTbl td[data-faction-id='23']:before {
+    background-position: 0% 100%;
+}
+#planetsTbl td[data-faction-id='21']:before {
+    background-position: 20% 100%;
+}
+#planetsTbl td[data-faction-id='18']:before {
+    background-position: 40% 100%;
+}
+#planetsTbl td[data-faction-id='22']:before {
+    background-position: 60% 100%;
+}
+#planetsTbl td[data-faction-id='24']:before {
+    background-position: 80% 100%;
+}
+#planetsTbl td[data-faction-id='19']:before {
+    background-position: 100% 100%;
+}
+
+
+@media (max-width: 920px) {
+}
+
+@media (max-width: 480px) {
+}
