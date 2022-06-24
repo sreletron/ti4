@@ -1042,76 +1042,76 @@ div .Exhausted .Summary { /* technology page*/
 }
 
 body[data-faction-id="1"] .CommandToken {
-    background-image: url(../Images/faction/faction1.jpg);
+    background-image: url(../Images/Faction/faction1.jpg);
 }
 body[data-faction-id="2"] .CommandToken {
-    background-image: url(../Images/faction/faction2.jpg);
+    background-image: url(../Images/Faction/faction2.jpg);
 }
 body[data-faction-id="3"] .CommandToken {
-    background-image: url(../Images/faction/faction3.jpg);
+    background-image: url(../Images/Faction/faction3.jpg);
 }
 body[data-faction-id="4"] .CommandToken {
-    background-image: url(../Images/faction/faction4.jpg);
+    background-image: url(../Images/Faction/faction4.jpg);
 }
 body[data-faction-id="5"] .CommandToken {
-    background-image: url(../Images/faction/faction5.jpg);
+    background-image: url(../Images/Faction/faction5.jpg);
 }
 body[data-faction-id="6"] .CommandToken {
-    background-image: url(../Images/faction/faction6.jpg);
+    background-image: url(../Images/Faction/faction6.jpg);
 }
 body[data-faction-id="7"] .CommandToken {
-    background-image: url(../Images/faction/faction7.jpg);
+    background-image: url(../Images/Faction/faction7.jpg);
 }
 body[data-faction-id="8"] .CommandToken {
-    background-image: url(../Images/faction/faction8.jpg);
+    background-image: url(../Images/Faction/faction8.jpg);
 }
 body[data-faction-id="9"] .CommandToken {
-    background-image: url(../Images/faction/faction9.jpg);
+    background-image: url(../Images/Faction/faction9.jpg);
 }
 body[data-faction-id="10"] .CommandToken {
-    background-image: url(../Images/faction/faction10.jpg);
+    background-image: url(../Images/Faction/faction10.jpg);
 }
 body[data-faction-id="11"] .CommandToken {
-    background-image: url(../Images/faction/faction11.jpg);
+    background-image: url(../Images/Faction/faction11.jpg);
 }
 body[data-faction-id="12"] .CommandToken {
-    background-image: url(../Images/faction/faction12.jpg);
+    background-image: url(../Images/Faction/faction12.jpg);
 }
 body[data-faction-id="13"] .CommandToken {
-    background-image: url(../Images/faction/faction13.jpg);
+    background-image: url(../Images/Faction/faction13.jpg);
 }
 body[data-faction-id="14"] .CommandToken {
-    background-image: url(../Images/faction/faction14.jpg);
+    background-image: url(../Images/Faction/faction14.jpg);
 }
 body[data-faction-id="15"] .CommandToken {
-    background-image: url(../Images/faction/faction15.jpg);
+    background-image: url(../Images/Faction/faction15.jpg);
 }
 body[data-faction-id="16"] .CommandToken {
-    background-image: url(../Images/faction/faction16.jpg);
+    background-image: url(../Images/Faction/faction16.jpg);
 }
 body[data-faction-id="17"] .CommandToken {
-    background-image: url(../Images/faction/faction17.jpg);
+    background-image: url(../Images/Faction/faction17.jpg);
 }
 body[data-faction-id="18"] .CommandToken {
-    background-image: url(../Images/faction/faction18.jpg);
+    background-image: url(../Images/Faction/faction18.jpg);
 }
 body[data-faction-id="19"] .CommandToken {
-    background-image: url(../Images/faction/faction19.jpg);
+    background-image: url(../Images/Faction/faction19.jpg);
 }
 body[data-faction-id="20"] .CommandToken {
-    background-image: url(../Images/faction/faction20.jpg);
+    background-image: url(../Images/Faction/faction20.jpg);
 }
 body[data-faction-id="21"] .CommandToken {
-    background-image: url(../Images/faction/faction21.jpg);
+    background-image: url(../Images/Faction/faction21.jpg);
 }
 body[data-faction-id="22"] .CommandToken {
-    background-image: url(../Images/faction/faction22.jpg);
+    background-image: url(../Images/Faction/faction22.jpg);
 }
 body[data-faction-id="23"] .CommandToken {
-    background-image: url(../Images/faction/faction23.jpg);
+    background-image: url(../Images/Faction/faction23.jpg);
 }
 body[data-faction-id="24"] .CommandToken {
-    background-image: url(../Images/faction/faction24.jpg);
+    background-image: url(../Images/Faction/faction24.jpg);
 }
 
 #planetsTbl td[data-faction-id='14']:before {
