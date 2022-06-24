@@ -1,6 +1,6 @@
 body {
     _background-color: rgb(255, 226, 164);
-    _background-image: url("../images/stars-png-640.png");
+    _background-image: url("../Images/stars-png-640.png");
     font-family: Calibri;
     font-size: 14px;
 }
@@ -201,7 +201,7 @@ table.UnitData tr:first-child td {
 .FactionIcon {
     display: inline-block;
     vertical-align: middle;
-    background: url(../images/race-corrected.png);
+    background: url(../Images/race-corrected.png);
     background-repeat: no-repeat;
     background-size: 300px;
     width: 50px;
@@ -226,7 +226,7 @@ table.UnitData tr:first-child td {
 }
 
 .ExhaustBtn {
-    background-image: url(../images/flip.png);
+    background-image: url(../Images/flip.png);
     background-size: cover;
     border: none;
     background-color: transparent;
@@ -237,7 +237,7 @@ table.UnitData tr:first-child td {
     transform: scaleX(-1);
 }
 .RemoveBtn {
-    background-image: url(../images/x.png);
+    background-image: url(../Images/x.png);
     background-size: cover;
     background-color: transparent;
     border: none;
@@ -245,7 +245,7 @@ table.UnitData tr:first-child td {
     height: 30px;
 }
 .UnlockBtn {
-    background-image: url(../images/lock.png);
+    background-image: url(../Images/lock.png);
     background-size: 29px;
     background-color: transparent;
     background-repeat: no-repeat;
@@ -255,7 +255,7 @@ table.UnitData tr:first-child td {
     height: 40px;
 }
 .PurgeBtn {
-    background-image: url(../images/purge.png);
+    background-image: url(../Images/purge.png);
     background-size: cover;
     border: none;
     background-color: transparent;
@@ -264,7 +264,7 @@ table.UnitData tr:first-child td {
 }
 .RerollBtn {
     background: none;
-    background-image: url(../images/reroll.png);
+    background-image: url(../Images/reroll.png);
     background-color: transparent;
     background-size: cover;
     border: none;
@@ -418,7 +418,7 @@ table.UnitData tr:first-child td {
     vertical-align: middle;
 }
 .TopMenu .RaceComodity {
-    background-image: url("../images/commodity.png");
+    background-image: url("../Images/commodity.png");
     background-size: contain;
     width: 50px;
     height: 50px;
@@ -597,7 +597,7 @@ body:not(.StartMode) > #startPage {
 }
 #startPage > .Header {
     background: #000;
-    background-image: url(../images/galaxy1.webp);
+    background-image: url(../Images/galaxy1.webp);
     background-size: cover;
     margin: -10px;
     margin-bottom: 20px;
@@ -655,7 +655,7 @@ body:not(.StartMode) > #startPage {
 #planetsPage *[data-faction-id]:before {
     content: "";
     display: inline-block;
-    background-image: url(../images/race-corrected.png);
+    background-image: url(../Images/race-corrected.png);
     background-size: 133px;
     width: 22px;
     height: 22px;
@@ -669,7 +669,7 @@ body:not(.StartMode) > #startPage {
     content: "";
     height: 16px;
     width: 16px;
-    background-image: url(../images/legendary.png);
+    background-image: url(../Images/legendary.png);
     background-size: cover;
     display: inline-block;
     vertical-align: middle;
@@ -735,7 +735,7 @@ div .Exhausted .Summary { /* technology page*/
 }
 
 #leaderPage #owmLeaderWrapper .UnlockBtn {
-    background-image: url(../images/x.png);
+    background-image: url(../Images/x.png);
 }
 #leaderPage *[data-field="Type"] {
     float: right;
@@ -926,7 +926,7 @@ div .Exhausted .Summary { /* technology page*/
 
 .UnitImage {
     clear: both;
-    background-image: url(../images/units-corrected.png);
+    background-image: url(../Images/units-corrected.png);
     background-size: cover;
     width: 100px;
     height: 100px;
@@ -1042,76 +1042,76 @@ div .Exhausted .Summary { /* technology page*/
 }
 
 body[data-faction-id="1"] .CommandToken {
-    background-image: url(../images/faction/faction1.jpg);
+    background-image: url(../Images/faction/faction1.jpg);
 }
 body[data-faction-id="2"] .CommandToken {
-    background-image: url(../images/faction/faction2.jpg);
+    background-image: url(../Images/faction/faction2.jpg);
 }
 body[data-faction-id="3"] .CommandToken {
-    background-image: url(../images/faction/faction3.jpg);
+    background-image: url(../Images/faction/faction3.jpg);
 }
 body[data-faction-id="4"] .CommandToken {
-    background-image: url(../images/faction/faction4.jpg);
+    background-image: url(../Images/faction/faction4.jpg);
 }
 body[data-faction-id="5"] .CommandToken {
-    background-image: url(../images/faction/faction5.jpg);
+    background-image: url(../Images/faction/faction5.jpg);
 }
 body[data-faction-id="6"] .CommandToken {
-    background-image: url(../images/faction/faction6.jpg);
+    background-image: url(../Images/faction/faction6.jpg);
 }
 body[data-faction-id="7"] .CommandToken {
-    background-image: url(../images/faction/faction7.jpg);
+    background-image: url(../Images/faction/faction7.jpg);
 }
 body[data-faction-id="8"] .CommandToken {
-    background-image: url(../images/faction/faction8.jpg);
+    background-image: url(../Images/faction/faction8.jpg);
 }
 body[data-faction-id="9"] .CommandToken {
-    background-image: url(../images/faction/faction9.jpg);
+    background-image: url(../Images/faction/faction9.jpg);
 }
 body[data-faction-id="10"] .CommandToken {
-    background-image: url(../images/faction/faction10.jpg);
+    background-image: url(../Images/faction/faction10.jpg);
 }
 body[data-faction-id="11"] .CommandToken {
-    background-image: url(../images/faction/faction11.jpg);
+    background-image: url(../Images/faction/faction11.jpg);
 }
 body[data-faction-id="12"] .CommandToken {
-    background-image: url(../images/faction/faction12.jpg);
+    background-image: url(../Images/faction/faction12.jpg);
 }
 body[data-faction-id="13"] .CommandToken {
-    background-image: url(../images/faction/faction13.jpg);
+    background-image: url(../Images/faction/faction13.jpg);
 }
 body[data-faction-id="14"] .CommandToken {
-    background-image: url(../images/faction/faction14.jpg);
+    background-image: url(../Images/faction/faction14.jpg);
 }
 body[data-faction-id="15"] .CommandToken {
-    background-image: url(../images/faction/faction15.jpg);
+    background-image: url(../Images/faction/faction15.jpg);
 }
 body[data-faction-id="16"] .CommandToken {
-    background-image: url(../images/faction/faction16.jpg);
+    background-image: url(../Images/faction/faction16.jpg);
 }
 body[data-faction-id="17"] .CommandToken {
-    background-image: url(../images/faction/faction17.jpg);
+    background-image: url(../Images/faction/faction17.jpg);
 }
 body[data-faction-id="18"] .CommandToken {
-    background-image: url(../images/faction/faction18.jpg);
+    background-image: url(../Images/faction/faction18.jpg);
 }
 body[data-faction-id="19"] .CommandToken {
-    background-image: url(../images/faction/faction19.jpg);
+    background-image: url(../Images/faction/faction19.jpg);
 }
 body[data-faction-id="20"] .CommandToken {
-    background-image: url(../images/faction/faction20.jpg);
+    background-image: url(../Images/faction/faction20.jpg);
 }
 body[data-faction-id="21"] .CommandToken {
-    background-image: url(../images/faction/faction21.jpg);
+    background-image: url(../Images/faction/faction21.jpg);
 }
 body[data-faction-id="22"] .CommandToken {
-    background-image: url(../images/faction/faction22.jpg);
+    background-image: url(../Images/faction/faction22.jpg);
 }
 body[data-faction-id="23"] .CommandToken {
-    background-image: url(../images/faction/faction23.jpg);
+    background-image: url(../Images/faction/faction23.jpg);
 }
 body[data-faction-id="24"] .CommandToken {
-    background-image: url(../images/faction/faction24.jpg);
+    background-image: url(../Images/faction/faction24.jpg);
 }
 
 #planetsTbl td[data-faction-id='14']:before {
