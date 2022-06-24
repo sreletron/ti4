@@ -1,0 +1,901 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Twilight Imperium 4th - Match Assistant</title>
+    <link rel="icon" href="/ti4/favicon.ico">
+    
+    
+    <!--<link rel="stylesheet" href="Styles/Main.css" />-->
+
+
+
+    <link rel="stylesheet" href="Styles/Assistant.css" />
+    <script src="Scripts/Data2.js?id=123" charset="utf-8"></script>
+    <script src="Scripts/Assistant.js?id=123"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+</head>
+<body class="StartMode">
+
+    <div class="Overlay"></div>
+    <div class="ConfirmationDialog">
+        <div class="Heading"></div>
+        <div>
+            Are you sure?
+        </div>
+        <input type="button" class="ConfirmBtn" value="Yes" />
+        <input type="button" class="CancelBtn" value="No" />
+    </div>
+
+    <div id="startPage">
+        <div class="Header">
+            <img src="images/logo.png" alt="" />
+            <h3>Match Assistant</h3>
+        </div>
+
+        <div class="Tabular">
+            <div>
+                <div>Faction</div>
+                <div>Codex</div>
+                <div>Action</div>
+            </div>
+            <div>
+                <div>
+                    <select id="factionDdl">
+                        <option disabled="disabled" selected="selected">Select</option>
+                    </select>
+                </div>
+                <div class="Center">
+                    <input type="checkbox" id="codexCb" checked="checked" />
+                </div>
+                <div class="Right">
+                    <input type="button" id="unpackBtn" value="Unpack" />
+                </div>
+            </div>
+        </div>
+
+        <div class="DataWrapper">
+            <h2 data-display-toggler="true" class="Active">Summary</h2>
+            <div class="SummaryWrapper EmptyMessage"></div>
+
+            <h2 data-display-toggler="true">Content</h2>
+            <div class="ContentWrapper EmptyMessage"></div>
+
+            <h2 data-display-toggler="true">Units</h2>
+            <div class="UnitWrapper EmptyMessage"></div>
+
+            <h2 data-display-toggler="true">Lore</h2>
+            <div class="FlavorWrapper EmptyMessage"></div>
+        </div>
+        <div>Choose a faction and begin your journey</div>
+    </div>
+
+    <div class="TopMenu">
+        <div class="Header">
+            <h1 id="factionTitleLbl"></h1>
+        </div>
+        <div class="TokenWrapper">
+            <div>
+                <div class="CommandToken"></div>
+                <div class="Commands MinusPlusAction">
+                    <input type="button" class="MinusBtn" />
+                    <input type="number" min="0" value="3" id="commandsTb" />
+                    <input type="button" class="PlusBtn" />
+                </div>
+            </div>
+            <div>
+                <div class="CommandToken Fleet"></div>
+                <div class="Commands MinusPlusAction">
+                    <input type="button" class="MinusBtn" />
+                    <input type="number" min="0" value="3" id="fleetTb" />
+                    <input type="button" class="PlusBtn" />
+                </div>
+            </div>
+
+            <div>
+                <div class="CommandToken"></div>
+                <div class="Commands MinusPlusAction">
+                    <input type="button" class="MinusBtn" />
+                    <input type="number" min="0" value="2" id="strategyTb" />
+                    <input type="button" class="PlusBtn" />
+                </div>
+            </div>
+        </div>
+        <div class="Footer">
+            <div>
+                <div class="RaceComodity ComodityBtn ConfirmationTrigger" data-text="Replenish commodities"></div>
+
+                <div class="Commands MinusPlusAction">
+                    <input type="button" class="MinusBtn" />
+                    <input type="number" min="0" value="0" id="comodityTb" />
+                    <input type="button" class="PlusBtn" />
+                </div>
+            </div>
+            <div>
+                <div class="Commands MinusPlusAction">
+                    <input type="button" class="MinusBtn" />
+                    <input type="number" min="0" value="0" id="tradegoodTb" />
+                    <input type="button" class="PlusBtn" />
+                </div>
+
+                <img src="images/tradegood.png" alt="Trade Good" />
+            </div>
+        </div>
+    </div>
+
+    <div class="TabControl">
+        <a href="javascript:void(0)" data-page="summaryPage">Summary</a>
+        <a href="javascript:void(0)" data-page="gamePage">Game</a>
+        <a href="javascript:void(0)" data-page="combatPage">Combat</a>
+        <div>
+            <select id="navigationDdl">
+                <option value="-1" disabled="disabled" selected="selected">Inventory</option>
+                <option value="planetsPage">Planets</option>
+                <option value="technologyPage">Technologies</option>
+                <option value="leaderPage">Leaders</option>
+                <option value="promissoryPage">Promissory Notes</option>
+                <option value="relicPage">Relics</option>
+                <option value="agendaPage">Agenda</option>
+                <option value="unitPage">Units</option>
+            </select>
+        </div>
+    </div>
+
+    <div id="summaryPage">
+        <div class="Template Summary">
+            <div class="Header">
+                <div data-field="Title"></div>
+                <div data-field="Source"></div>
+            </div>
+            <div data-field="Summary"></div>
+            <input type="button" class="ExhaustBtn" value="" />
+        </div>
+
+        <h2>Passive</h2>
+        <div id="passiveWrapper"></div>
+
+        <h2>Active</h2>
+        <div id="activeWrapper"></div>
+
+        <h2>Units</h2>
+        <div id="unitWrapper"></div>
+    </div>
+
+    <div id="gamePage">
+        <h2>Actions</h2>
+        <div>
+            <input type="button" class="UnexhaustAllBtn ConfirmationTrigger" data-text="Unexhaust all cards" value="Unexhaust all" />
+            <input type="button" class="LeaveGameBtn ConfirmationTrigger" data-text="Leave the game" value="Leave game" />
+        </div>
+
+        <h2 data-display-toggler="true" class="Active">Players</h2>
+        <div class="Tabular">
+            <div data-color="Black">
+                <div class="Label">Black</div>
+                <div class="Label">
+                    <select class="RaceDdl"></select>
+                </div>
+                <div class="Label">
+                    <input type="button" class="SummaryBtn" value="Summary" />
+                </div>
+            </div>
+            <div data-color="Red">
+                <div class="Label">Red</div>
+                <div class="Label">
+                    <select class="RaceDdl"></select>
+                </div>
+                <div class="Label">
+                    <input type="button" class="SummaryBtn" value="Summary" />
+                </div>
+            </div>
+            <div data-color="Blue">
+                <div class="Label">Blue</div>
+                <div class="Label">
+                    <select class="RaceDdl"></select>
+                </div>
+                <div class="Label">
+                    <input type="button" class="SummaryBtn" value="Summary" />
+                </div>
+            </div>
+            <div data-color="Green">
+                <div class="Label">Green</div>
+                <div class="Label">
+                    <select class="RaceDdl"></select>
+                </div>
+                <div class="Label">
+                    <input type="button" class="SummaryBtn" value="Summary" />
+                </div>
+            </div>
+            <div data-color="Yellow">
+                <div class="Label">Yellow</div>
+                <div class="Label">
+                    <select class="RaceDdl"></select>
+                </div>
+                <div class="Label">
+                    <input type="button" class="SummaryBtn" value="Summary" />
+                </div>
+            </div>
+            <div data-color="Orange">
+                <div class="Label">Orange</div>
+                <div class="Label">
+                    <select class="RaceDdl"></select>
+                </div>
+                <div class="Label">
+                    <input type="button" class="SummaryBtn" value="Summary" />
+                </div>
+            </div>
+            <div data-color="Pink">
+                <div class="Label">Pink</div>
+                <div class="Label">
+                    <select class="RaceDdl"></select>
+                </div>
+                <div class="Label">
+                    <input type="button" class="SummaryBtn" value="Summary" />
+                </div>
+            </div>
+            <div data-color="Purple">
+                <div class="Label">Purple</div>
+                <div class="Label">
+                    <select class="RaceDdl"></select>
+                </div>
+                <div class="Label">
+                    <input type="button" class="SummaryBtn" value="Summary" />
+                </div>
+            </div>
+        </div>
+
+        <h2 class="SummaryLbl Active" data-display-toggler="true">Summary</h2>
+        <div>
+            <h3 data-display-toggler="true" class="Active">Summary</h3>
+            <div class="SummaryWrapper EmptyMessage"></div>
+
+            <h3 data-display-toggler="true">Content</h3>
+            <div class="ContentWrapper EmptyMessage"></div>
+
+            <h3 data-display-toggler="true">Units</h3>
+            <div class="UnitWrapper EmptyMessage"></div>
+        </div>
+
+        <h2 data-display-toggler="true">Rules summary</h2>
+        <div>
+            <h3>
+                1. The Strategy Phase
+            </h3>
+            <p>
+                Starting from the speaker and then going clockwise everyone takes
+                a strategy card, in a 3 or 4 player game everyone then takes a second
+                strategy card; any not taken gain 1 trade good.
+                Initiative order for the round is dictated by the lower number.
+            </p>
+
+            <h3>2. Action Phase</h3>
+            <p>
+                Do one of 3 types of action or pass, you cannot pass until you have
+                done all your strategic actions.
+
+                <h4>Strategic Action</h4>
+                <ol>
+                    <li>Use the primary ability of a strategy card.</li>
+                    <li>
+                        Everyone clockwise from you can do the secondary. <br />
+                        Players who have passed may still do the secondary.
+                    </li>
+                </ol>
+
+                <h4>Component Action</h4>
+                Do an Action on one of your components.
+
+
+                <h4>Tactical Action</h4>
+
+                <ol>
+                    <li>Activation</li>
+                    <li>
+                        Movement
+                        <ol style="list-style-type:lower-roman">
+                            <li>Move Ships.</li>
+                            <li>Space Cannon Offence.</li>
+                        </ol>
+                    </li>
+                    <li>
+                        Space Combat
+                        <ol style="list-style-type:lower-roman">
+                            <li>Anti-Fighter Barrage.</li>
+                            <li>Announce Retreats.</li>
+                            <li>Make Combat Rolls.</li>
+                            <li>Assign Hits.</li>
+                            <li>Retreat.</li>
+                            <li>Repeat From ii)</li>
+                        </ol>
+                    </li>
+                    <li>
+                        Invasion
+                        <ol style="list-style-type:lower-roman">
+                            <li>Bombardment.</li>
+                            <li>Commit Ground Forces.</li>
+                            <li>Space Cannon Defence.</li>
+                            <li>Ground Combat.</li>
+                            <li>Establish Control.</li>
+                        </ol>
+                    </li>
+                    <li>Production</li>
+                </ol>
+                Repeat action phase until everyone has passed.
+            </p>
+
+
+            <h3>3. The Status Phase</h3>
+            <p>
+                <ol>
+                    <li>
+                        Score objectives.
+                        <br />
+                        In Initiative order score 1 public and or 1 secret objective.
+                        Cannot score public if you do not control all your home planets.
+                    </li>
+                    <li>Reveal next public objective.</li>
+                    <li>
+                        Draw an action card.
+                        <br />
+                        Normally 1, players with the Neural Motivator tech get 2.
+                    </li>
+                    <li>Remove all command tokens from the board.</li>
+                    <li>
+                        Gain command tokens and redistribute.
+                        <br />
+                        Normally 2, players with the Hyper Metabolism tech get 3.
+                    </li>
+                    <li>Ready cards.</li>
+                    <li>Repair units.</li>
+                    <li>Return strategy cards.</li>
+                </ol>
+            </p>
+
+
+
+            <h3>4. The Agenda Phase (after Mecatol Rex has been invaded)</h3>
+            <ol>
+                <li>Speaker draws and reads the top agenda card.</li>
+                <li>Clarify the effects of the agenda card.</li>
+                <li>When an agenda card is revealed effects (Veto etc).</li>
+                <li>After an agenda card is revealed effects (Riders etc).</li>
+                <li>
+                    Vote using influence.
+
+                    Clockwise starting from the player to the left of the speaker.
+                    Can only vote on 1 outcome.
+                    Can abstain this is not the same as casting 0 votes.
+                    Speaker is the tie breaker.
+                    While resolving each agenda card, anyone may make a single
+                    transaction with each player, even if they are not neighbours.
+                    Repeat for a second agenda card
+                </li>
+                <li>Ready planets.</li>
+            </ol>
+
+            <h3>Important Rules</h3>
+            <ul style="list-style: initial; margin:unset; padding: revert">
+                <li>Public and secret objectives scored during the status phase are scored in initiative order.</li>
+                <li>You cannot score public objectives if you do not control all the planets in your home system.</li>
+                <li>After an invasion any planets you gain come to you exhausted.</li>
+                <li>A space dock can only produce a number of units equal to the resource (yellow) value of the planet it is on +2.</li>
+                <li>The first player to invade Mecatol Rex must also spend 6 influence, that player gets 1 VP.</li>
+                <li>Command tokens in your fleet dictate the amount of non fighter ships that you can have in a system.</li>
+                <li>You can only have 1 space dock and 2 PDSs per planet.</li>
+                <li>A planets resources are the yellow number and the influence is the blue number.</li>
+                <li>You are component limited apart from ground forces and fighters.</li>
+                <li>You can exhaust a planet with a tech symbol to cover a prerequisite when researching.</li>
+                <li>Unit upgrades do not cover any technology prerequisites or count towards technology objectives.</li>
+                <li>Some planets have traits this is important for some objectives and action cards.</li>
+            </ul>
+
+
+            <!--Strategy Cards
+        1) Leadership
+        P: Gain 3 CT’s then spend influence to gain 1 CT for every 3 spent.
+        S: Spend influence to gain 1 CT for every 3 spent.
+        2) Diplomacy
+        P: Pick a system, everyone else puts a CT from their reserve into that system
+        then you ready each planet in that system.
+        S: Spend 1 strategy CT to ready 2 planets.
+        3) Politics
+        P: Pick a new speaker (cannot be the current speaker) then draw 2 action cards
+        then look at next 2 agenda cards place each card in any order on the top or
+        bottom of the deck.
+        S: Spend 1 strategy CT to draw 2 action cards.
+        4) Construction
+        P: Place a PDS or a space dock on a planet you control then place a PDS on a
+        planet you control.
+        S: Place 1 strategy CT in a system then place a PDS or a space dock on a planet
+        you control in that system.
+        5) Trade
+        P: Gain 3 trade goods then replenish commodities then pick people who can
+        do the secondary without spending a strategy CT.
+        S: Spend 1 strategy CT to replenish commodities.
+        6) Warfare
+        P: Remove 1 CT from a system then gain 1 CT then redistribute CT’s.
+        S: Spend 1 strategy CT to produce with 1 unit in your home system.
+        7) Technology
+        P: Research 1 tech then you may spend 6 resources to research again.
+        S: Spend 1 strategy CT and 4 resources to research a tech.
+        8) Imperial
+        P: Score 1 public objective if you qualify then gain 1 VP if you control Mecatol
+        Rex or draw 1 secret objective.
+        S: Spend 1 strategy CT to draw 1 secret objective.-->
+
+
+            <h3>Anomalies</h3>
+            <ul style="list-style: initial; margin:unset; padding: revert">
+                <li>
+                    Ships cannot move into or through an Asteroid Belt, the Anitmass Deflectors
+                    tech and other game effects may make it possible to.
+                </li>
+                <li>
+                    Any ship that moves into, out of or through a Gravity Rift gets +1 move,
+                    when a ship moves out of or through a Gravity Rift you roll a die and it gets
+                    destroyed on a 1-3, transported units do not roll but do get destroyed if the
+                    unit transporting them is destroyed.
+                </li>
+                <li>
+                    Ships cannot move through a Nebula, defenders get +1, ships moving out
+                    have a move of 1, this may be modified though.
+                </li>
+                <li>Ships cannot move into or through a Supernova.</li>
+                <li>Wormholes are considered adjacent for all purposes.</li>
+            </ul>
+
+
+
+
+            <h3>Transactions and Deals</h3>
+            <ul style="list-style: initial; margin:unset; padding: revert">
+                <li>
+                    During your turn you may make a single transaction with each neighbour you
+                    may exchange any combination of commodities, trade goods and up to 1
+                    promissory note.
+                </li>
+                <li>
+                    A deal may include a transaction but also an agreement, any terms of the deal
+                    that can happen immediately are binding any future promises are not.
+                </li>
+                <li>
+                    Trade goods can be used at any time as 1 resource or 1 influence, you cannot
+                    use them for influence during voting.
+                </li>
+            </ul>
+
+            <h3>Unit Abilities</h3>
+            <ul style="list-style: initial; margin:unset; padding: revert">
+                <li>Anti-Fighter Barrage units can attack fighters at the start of space combat.</li>
+                <li>Bombardment units can attack ground forces at the start of invasion.</li>
+                <li>Planetary Shield units protect the planet from Bombardment.</li>
+                <li>Production units can produce during a tactical action.</li>
+                <li>Space Cannon units may fire during movement and invasion.</li>
+                <li>Sustain Damage units take 2 hits to be destroyed.</li>
+            </ul>
+
+
+            <h3>Secret Objectives</h3>
+            <ul style="list-style: initial; margin:unset; padding: revert">
+                <li>You can only have 3 total scored and unscored secret objectives. </li>
+                <li>There is no secret objective discard pile whenever a secret objective is discarded it is shuffled back into the deck.</li>
+            </ul>
+
+
+            <h3>Action Cards</h3>
+            <ul style="list-style: initial; margin:unset; padding: revert">
+                <li>There is a hand limit of 7 action cards.</li>
+                <li>
+                    Multiple action cards with the same name cannot be played during a single timing window to affect the same units or game effect.
+                    <br />
+                    EG: Playing 2 direct hits on 2 different units in one space combat is allowed, playing 2 flank speeds during movement is not.
+                </li>
+                <li>If your first copy of an action card gets sabotaged you can play a second copy if you have one.</li>
+                <li>Combat action cards are very specific about which part of the tactical action you can use them in.</li>
+                <li>Skilled Retreat is not a retreat.</li>
+            </ul>
+
+        </div>
+    </div>
+
+    <div id="combatPage">
+
+        <div class="RollTemplate">
+            <h3 data-field="Title"></h3>:
+            <span class="RollsWrapper"></span>
+            <span class="AddDieBtn">Add die</span>
+        </div>
+
+        <div class="RollModifierTemplate">
+            <input type="button" class="MinusBtn" />
+            <input type="button" class="RerollBtn" value="Reroll" />
+            <input type="button" class="PlusBtn" />
+        </div>
+
+        <h2>Units</h2>
+        <div>
+            Display:
+            <select id="combatDisplayTypeDdl">
+                <option value="0">Thumbnails</option>
+                <option value="1">List</option>
+            </select>
+            <input type="button" id="combatClearBtn" value="Clear" />
+        </div>
+
+        <table id="combatWrapper">
+            <thead>
+                <tr>
+                    <td>Unit</td>
+                    <td>Combat</td>
+                    <td>Count</td>
+                </tr>
+            </thead>
+            <tbody class="Template">
+                <tr>
+                    <td>
+                        <h3></h3>
+                        <div class="UnitImage" data-unit-type="1"></div>
+                        <div class="UnitFeatures">
+                            <div class="SpaceCannonWrapper">
+                                Space cannon: <span data-field="SpaceCannon"></span>
+                            </div>
+                        </div>
+                    </td>
+                    <td data-field="Combat" class="Right"></td>
+                    <td class="MinusPlusAction">
+                        <input type="button" class="MinusBtn" />
+                        <input type="number" class="UnitCount" min="0" value="0" />
+                        <input type="button" class="PlusBtn" />
+                    </td>
+                </tr>
+                <tr>
+                    <td data-field="Passive" colspan="3"></td>
+                </tr>
+            </tbody>
+        </table>
+
+
+
+        <h2 data-display-toggler="true">Battle</h2>
+        <div class="BattleWrapper">
+            <div class="HitWrapper"></div>
+            <div class="Notification">Click on a unit or roll to modify it</div>
+            <div id="plasmaScoringNotification" class="Notification" style="display: none">Plasma scoring included</div>
+
+            Roll modifier:
+            <div class="MinusPlusAction">
+                <input type="button" class="MinusBtn" />
+                <input type="number" id="combatModifierTb" value="0" />
+                <input type="button" class="PlusBtn" />
+            </div>
+
+            <div class="Actions">
+                <input type="button" value="Space Combat" id="spaceCombatBtn" />
+                <input type="button" value="Ground Combat" id="groundCombatBtn" />
+                <input type="button" value="Full Combat" id="fullCombatBtn" />
+                <input type="button" value="AFB" id="afbBtn" />
+                <input type="button" value="Space Cannon" id="scBtn" />
+                <input type="button" value="Bombardment" id="bombardmentBtn" />
+            </div>
+        </div>
+
+    </div>
+
+    <div id="planetsPage">
+
+        <div class="PendingPlanetTemplate">
+            <h3 data-field="Name"></h3>
+
+            <span class="PlanetTraits"></span>;
+            Resources:
+            <span data-field="Resources"></span>;
+            Influence:
+            <span data-field="Influence"></span>
+            <span class="Technology"></span>
+
+            <br/><br />
+
+            <input type="button" class="AddBtn PlusBtn" value="" />
+        </div>
+
+        <div class="LegendaryPlanetTemplate" data-type="Legendary planet">
+            <div data-field="PlanetName"></div>
+            <h3 data-field="Title"></h3>
+            <div data-field="Summary"></div>
+            <input type="button" class="ExhaustBtn" />
+        </div>
+
+        <h2>Own</h2>
+        <div>
+            <table id="planetsTbl">
+                <thead>
+                    <tr>
+                        <td>Name</td>
+                        <td>R</td>
+                        <td>I</td>
+                        <td>Trait</td>
+                        <td>Tech</td>
+                        <td>Action</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="Template" data-type="Planet">
+                        <td data-field="Name"></td>
+                        <td data-field="Resources" class="Right"></td>
+                        <td data-field="Influence" class="Right"></td>
+                        <td class="PlanetTraits"></td>
+                        <td class="Technology"></td>
+                        <td>
+                            <input type="button" class="ExhaustBtn" value="" />
+                            <input type="button" class="RemoveBtn" value="" />
+                        </td>
+                    </tr>
+                    <tr class="TemplateEditor">
+                        <td colspan="7">
+                            <table>
+                                <tr>
+                                    <td>+ Resources</td>
+                                    <td>+ Influence</td>
+                                    <td>+ Speciality</td>
+                                </tr>
+                                <tr>
+                                    <td class="MinusPlusAction">
+                                        <input type="button" class="MinusBtn Mini" />
+                                        <input type="number" id="planetEditorResourcesTb" min="-10" max="10" value="0" placeholder="R" style="width:13px" />
+                                        <input type="button" class="PlusBtn Mini" />
+                                    </td>
+                                    <td class="MinusPlusAction">
+                                        <input type="button" class="MinusBtn Mini" />
+                                        <input type="number" id="planetEditorInfluenceTb" min="-10" max="10" value="0" placeholder="I" style="width:13px" />
+                                        <input type="button" class="PlusBtn Mini" />
+                                    </td>
+                                    <td>
+                                        <label class="Requirement Green" for="planetEditorGreenCb"></label><input type="checkbox" id="planetEditorGreenCb" />
+                                        <label class="Requirement Blue" for="planetEditorBlueCb"></label><input type="checkbox" id="planetEditorBlueCb" />
+                                        <label class="Requirement Red" for="planetEditorRedCb"></label><input type="checkbox" id="planetEditorRedCb" />
+                                        <label class="Requirement Yellow" for="planetEditorYellowCb"></label><input type="checkbox" id="planetEditorYellowCb" />
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr data-section="Total">
+                        <td>Total</td>
+                        <td class="Number" data-field="Resources"></td>
+                        <td class="Number" data-field="Influence"></td>
+                        <td rowspan="2" colspan="3"></td>
+                    </tr>
+                    <tr data-section="Available">
+                        <td>Available</td>
+                        <td class="Number" data-field="Resources"></td>
+                        <td class="Number" data-field="Influence"></td>
+                    </tr>
+                </tfoot>
+            </table>
+            <div class="Notification">Click on a planet row to decorate it</div>
+        </div>
+
+        <h2 data-display-toggler="true">Pending</h2>
+        <div>
+            <select id="planetsDdl">
+                <option value="-1" disabled="disabled" selected="selected">Select</option>
+            </select>
+            <div class="PendingPlanet EmptyMessage"></div>
+        </div>
+
+
+        <h2 data-display-toggler="true">Unit price list</h2>
+        <div>
+            <table class="UnitPiceListTbl">
+                <thead>
+                    <tr>
+                        <td>Name</td>
+                        <td>Combat</td>
+                        <td>Move</td>
+                        <td>Capacity</td>
+                        <td>Cost</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="Template">
+                        <td data-field="Title"></td>
+                        <td data-field="Combat" class="Number"></td>
+                        <td data-field="Move" class="Number"></td>
+                        <td data-field="Capacity" class="Number"></td>
+                        <td data-field="Cost" class="Number"></td>
+                    </tr>
+                </tbody>
+            </table>
+            <div id="sarweenToolsNotification" class="Notification" style="display: none">Sarween Tools active (total production discount -1)</div>
+        </div>
+
+
+        <h2 data-display-toggler="true">Legendary</h2>
+        <div class="LegendaryPlanet EmptyMessage"></div>
+    </div>
+
+    <div id="technologyPage">
+        <div class="Template" data-type="Technology">
+            <h3>
+                <span class="Requirement"></span>
+                <span class="RequirementList"></span>
+            </h3>
+            <div class="Summary">
+                <div class="Content"></div>
+                <input type="button" class="AddBtn PlusBtn" value="" />
+                <input type="button" class="RemoveBtn" value="" />
+                <input type="button" class="ExhaustBtn" value="" />
+            </div>
+        </div>
+
+        <h2>Own</h2>
+        <div id="ownTechWrapper" class="EmptyMessage"></div>
+
+        <h2 id="availableLbl" data-display-toggler="true" class="Active">Available to research</h2>
+        <div>
+            <div id="availableTechWrapper" class="EmptyMessage"></div>
+            <div data-planet="Planet specialities counted"></div>
+        </div>
+
+        <h2 data-display-toggler="true">All techs</h2>
+        <div id="allTechWrapper" class="EmptyMessage"></div>
+
+        <h2 data-display-toggler="true">Enemy techs</h2>
+        <div id="enemyTechWrapper" class="EmptyMessage"></div>
+    </div>
+
+    <div id="promissoryPage">
+
+        <div class="Template">
+            <h3 data-field="Title"></h3>
+            <div data-field="Summary"></div>
+
+            <input type="button" class="RemoveBtn" value="" />
+            <input type="button" class="AddBtn PlusBtn" value="" />
+        </div>
+
+        <h2>Active</h2>
+        <div class="ownWrapper EmptyMessage"></div>
+
+        <h2 data-display-toggler="true">Enemies</h2>
+        <div>
+            <select id="promissoryDdl">
+                <option value="-1" disabled="disabled" selected="selected">Select</option>
+            </select>
+            <div id="selectedPnGenericWrapper" class="EmptyMessage"></div>
+        </div>
+
+        <h2 data-display-toggler="true">Mine</h2>
+        <div id="minePnWrapper" class="EmptyMessage"></div>
+        
+    </div>
+
+    <div id="leaderPage">
+
+        <div class="Template" data-type="Leader">
+            <div data-field="Type"></div>
+            <h3 data-field="Title"></h3>
+
+            <div data-field="Summary"></div>
+
+            <div class="UnlockWrapper">
+                <span class="ActionLbl">Unlock:</span>
+                <span data-field="Unlock"></span>
+            </div>
+
+            <input type="button" class="UnlockBtn" value="" />
+            <input type="button" class="ExhaustBtn" value="" />
+            <input type="button" class="PurgeBtn" value="" />
+        </div>
+
+        <h2>Own</h2>
+        <div class="EmptyMessage" id="owmLeaderWrapper"></div>
+
+        <h2 data-display-toggler="true">Locked</h2>
+        <div class="EmptyMessage" id="lockedLeaderWrapper"></div>
+
+        <h2 data-display-toggler="true">Purged</h2>
+        <div class="EmptyMessage" id="purgedLeaderWrapper"></div>
+    </div>
+
+    <div id="relicPage">
+
+        <div class="Template" data-type="Relic">
+            <h3 data-field="Title"></h3>
+            <div data-field="Summary"></div>
+            <input type="button" class="AddBtn PlusBtn" value="" />
+            <input type="button" class="RemoveBtn" value="" />
+            <input type="button" class="ExhaustBtn" value="" />
+            <input type="button" class="PurgeBtn" value="" />
+        </div>
+
+
+        <h2>Own</h2>
+        <div class="DataWrapper EmptyMessage"></div>
+
+        <h2 data-display-toggler="true">
+            Pending
+        </h2>
+        <div>
+            <select class="SelectList">
+                <option value="-1" disabled="disabled" selected="selected">Select</option>
+            </select>
+
+            <div class="PeekWrapper EmptyMessage"></div>
+        </div>
+
+        <h2 data-display-toggler="true">Purged</h2>
+        <div class="PurgedWrapper EmptyMessage"></div>
+    </div>
+
+    <div id="agendaPage">
+
+        <div class="Template">
+            <h3 data-field="Title"></h3>
+            <div data-field="Summary"></div>
+            <input type="button" class="AddBtn PlusBtn" value="" />
+            <input type="button" class="RemoveBtn" value="" />
+        </div>
+
+
+        <h2>Active</h2>
+        <div class="DataWrapper EmptyMessage"></div>
+
+        <h2 data-display-toggler="true">
+            Pending
+        </h2>
+        <div>
+            <select class="SelectList">
+                <option value="-1" disabled="disabled" selected="selected">Select</option>
+            </select>
+            <div class="PeekWrapper EmptyMessage"></div>
+        </div>
+    </div>
+
+    <div id="unitPage">
+
+        <div class="Template Unit">
+            <div>
+                <h3></h3>
+                <div class="UnitImage" data-unit-type="1"></div>
+            </div>
+            <div>
+                <div class="RequirementList">Prerequisite: </div>
+                <table class="Right UnitData">
+                    <tr>
+                        <td>Cost</td>
+                        <td class="Combat">Combat</td>
+                        <td>Move</td>
+                        <td>Capacity</td>
+                    </tr>
+                    <tr>
+                        <td data-field="Cost"></td>
+                        <td data-field="Combat"></td>
+                        <td data-field="Move"></td>
+                        <td data-field="Capacity"></td>
+                    </tr>
+                </table>
+                <div class="Features"></div>
+                <div class="RollState"></div>
+            </div>
+            <div class="Summary"></div>
+        </div>
+
+        <h2>Own</h2>
+        <div>
+            <div id="ownWrapper"></div>
+            <div class="Notification">Click on a unit ability to roll for it</div>
+        </div>
+
+        <h2 data-display-toggler="true">Upgrades</h2>
+        <div id="upgradesWrapper"></div>
+
+    </div>
+
+</body>
+</html>
