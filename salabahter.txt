@@ -1,0 +1,81 @@
+setup
+- 3 3 2 su pocetni command tokeni na player sheetu
+- FOUR-PLAYER: Five blue and three red tiles are dealt to each player.
+- FIVE-PLAYER (HYPERLANES): Three blue and two red tiles are dealt to each player.
+- SIX-PLAYER: Three blue and two red tiles are dealt to each player.
+
+planets
+- plava je kultura, crvena hazard, zelena industrial
+- uvjek kad dobijes planet dobijes ga facedown
+- legendary planet karticu dobijes faceup
+- za tehnology prerekvizit mozes exostat planet koji ima taj tip tehnologije - simbol gore lijevo na kartici (ovo se lako zabuni sa tipom planeta jer su farbe iste)
+- You can only have 1 space dock and 2 PDSs per planet.
+
+Promissory notes 
+- are not mandatory unless otherwise specified.
+- Promissory notes in the play area cannot be traded
+
+space dock
+- can only produce a number of units equal to the resource (yellow) value of the planet it is on +2.
+- space dock (i sve ostale zgrade) crkne tek kad sletis sa pjesadijom na njega
+
+space canon
+- Starting with the active player and going clockwise any units with the space cannon ability that are in range may fire into the active system.
+- - znaci, svako ko moze ce opalit roll svojih SC jedinca pocevsi od tebe kao "napadaca"
+- - znaci, kao defender pucas i kad netko ulazi kod tebe i kada invade-a planet
+
+action card
+- nemres trejdat ActionCard
+- There is a hand limit of 7 action cards.
+- Multiple action cards with the same name cannot be played during a single timing window to affect the same units or game effect.
+
+secret objective
+- djele se nakon tek nakon sto se mapa napravi - svatko dobije 2 i bira jednu
+- You can only have 3 total scored and unscored secret objectives.
+- Imperial kartom mozes izvuc 4ti secret, pa bacas jedan
+
+Agenda Phase je nakon status faze al prije vucenja strateskih karata
+- strategy, action, status, agenda je order
+
+galaxy building
+- od speakera clockwise - kada dodje do zadnjeg mjenja se smjer (1 2 3 4 5 6, 6 5 4 3 2 1)
+- crvena nemre do crvene
+- wormhole nemre do wormhola
+
+nemres PUBLIC objective scorat ako nemas sve planete doma
+
+kada se povlacis mora se odradit combat round; mozes uzet pjesake; sistem u koj odlazis mora imat komad necega tvoga i nesmije imat protivnicke brodove; bacis iz rezerve token tam
+
+commoditya nemres imat vise nego sto pise
+
+production limit 4 znaci 4 fajtera/infantrya, a ne 8
+
+A unit cannot produce ships (al mogu pjesake) if there are other players ships in the system.
+
+Trade goods can be used at any time as 1 resource or 1 influence, you cannot use them for influence during voting.
+
+you may make a single transaction with each neighbour you may exchange any combination of commodities, trade goods and up to 1 promissory note (mozes i PoK pizdarije).
+
+Cannot move ships from a system that has your command tokens in but you may move through them.
+
+Mozes proc kroz Gravity Rift: A ship that will move out of or through a gravity rift at any time during its movement, applies +1 to its move value.
+
+scora se po initiative orderu (ne u smjeru kazaljke), a u slucaju TIE-a pobjedjuje onaj koj je blize po inicijativi
+
+fighter i infantry velki tokeni vrijede 3
+
+kada bilo kakav efekt kaze produce x - to nikad nije badava!
+
+Sarween Tools moze spustit discount na 0
+
+Arborec pješaci imaju production 1 - sa time mogu proizvest brod
+
+Mech je ground forces
+
+capture - stavljas na svoj playermat te unite
+- infantry i fightere stavljas iz generalne banke
+- mozes trejdat njemu njegove unite
+- ako blokiras space dock dobijes nazad sve svoje unite
+- ako ti neki igrac blokira space dock nemres mu unite zarobljavat
+
+To resolve an exploration card, a player reads the card, makes any necessary decisions, and resolves its ability. If the card was not a relic fragment or an attachment, it is discarded into its respective discard pile. (reshufla se discard pile ak je prazan deck)

@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Twilight Imperium 4th - Tech Šalabahter</title>
+    <style>
+        body {
+            font-family: Verdana;
+			font-size: 14px;
+        }
+		h2 {
+			font-size: 16px;
+			margin: 5px 0;
+		}
+		h3 {
+			display: none;
+			font-size: 14px;
+			font-weight: normal;
+		}
+        table {
+            border: solid 1px #000;
+            border-collapse: collapse;
+        }
+        td {
+            padding: 5px;
+            border: solid 1px #000;
+        }
+        td.Blue {
+            background: blue;
+            color: #fff;
+        }
+        td.Yellow {
+            background: yellow;
+        }
+        td.Red {
+            background: red;
+        }
+        td.Green {
+            background: green;
+            color: #fff;
+        }
+		body.Simple td:not(:first-child),
+		body.Simple td.Blue /*hacky selector*/		
+		{
+			font-size: 0;
+		}		
+		body.Simple h3 {
+			display: block;
+		}		
+    </style>
+	<script>
+		function complexSimpleToggle() {
+		  var element = document.querySelector("body");
+		  element.classList.toggle("Simple");
+		} 
+	</script>
+</head>
+<body>
+    <table>
+        <tr>
+			<td rowspan="2">Lvl 1</td>
+            <td class="Blue">
+				<h2>Antimass Deflectors</h2>
+                Mozes ic kroz asteroide <br />
+				-1 na protivnicki SPACE CANNON 
+            </td>
+            <td class="Yellow">
+				<h2>Sarween Tools</h2>
+                -1 košta porizvodnja
+            </td>
+            <td class="Red">
+				<h2>Plasma Scoring</h2>
+                BOMBARDMENT or SPACE CANNON daje dodatnu kockicu jednom brodu
+            </td>
+            <td class="Green">
+				<h2>Neural Motivator</h2>
+                Vuci 2 kartice mjesto 1
+            </td>
+        </tr>
+		<tr>			
+            <td class="Blue">
+				<h2>Dark Energy Tap</h2>
+				mozes explorat frontier <br />
+				mozes se povuc sada i u prazan sistem
+			</td>
+			<td class="Yellow">
+				<h2>Scanlink Drone Network</h2>
+                kada aktiviras sustav mozes explorat planet na kojemu imas nesto 
+				<br />
+				(bez obzira dal je vec exploran; mozes produce i ovo istovremeno)				
+				<h3>
+					Explore planeta
+				</h3>
+            </td>
+			<td class="Red">
+				<h2>AI Development Algorithm</h2>
+                exhaust: ignoraj jedan prerequizit tokom resercha UNIT tehnologija <br />
+				exhaust: kada proizvodis dobijes discount kolko imas UNIT tehnologija
+				<h3>
+					Unit tech buffs - research prerequisite i production discount
+				</h3>
+            </td>
+            <td class="Green">
+				<h2>Psychoarchaeology</h2>
+				mozes iskoristit planet sa tehnoloskim prerequizitom bez da ga exostatš <br />
+				mozes exostat planete koje imaju tehnološki prerequzit za 1 TG
+				<h3>
+					Tech planeti
+				</h3>
+            </td>
+        </tr>
+        <tr>
+			<td rowspan="2">Lvl 2</td>
+            <td class="Blue">
+				<h2>Gravity Drive</h2>
+				jedan brod dobije +1 micanja
+			</td>
+            <td class="Yellow">							
+				<h2>Graviton Laser System</h2>
+                exhaust: SPACE CANNON udarci (jedan il vise brodova) moraju ic na non-fighter
+            </td>
+            <td class="Red">
+				<h2>Magen Defense Grid</h2>
+                exhaust: ako imas PLANETARY SHIELD protivnik ne rola ovu rudnu ground combata
+            </td>
+            <td class="Green">
+				<h2>Dacxive Animators</h2>
+                kada dobijes ground combat dobijes 1 lika
+            </td>
+        </tr>
+		<tr>			
+            <td class="Blue">				
+				<h2>Sling Relay</h2>
+				exhaust: produce 1 brod (bas brod) na nekom tvojem space docku
+			</td>
+            <td class="Yellow">
+				<h2>Predictive Intelligence</h2>
+                exhaust (na kraju kruga): redistribuiraš tokene na sheet-u <br />
+				kod glasanja imas 3 extra glasa; ako ono za sto si glasao nije proslo ovo se exosta
+				<h3>
+					Extra glasovi i organziacija tokena
+				</h3>
+            </td>
+            <td class="Red">
+				<h2>Self Assembly Routines</h2>				
+                exhaust (kada neki unit radi produce): jednog meka postavit <br />
+				kad mek crkne dobijes TG
+				<h3>
+					Mechovi - besplatno radjanje i smrt daje TG 
+				</h3>
+            </td>
+            <td class="Green">
+				<h2>Bio-Stims</h2>
+                exhaust (na kraju svog kruga): readyaš neki tvoj planet koj ima tech specalty ili tenologiju koja je okrenuta dolje
+				<h3>
+					Ready Tech or Tech planet 
+				</h3>
+            </td>
+        </tr>
+		<tr>
+			<td>Lvl 3</td>			
+            <td class="Blue">				
+				<h2>Fleet Logistics</h2>
+                tokom svog kruga mozes radit 2 akcije za redom
+            </td>
+            <td class="Yellow">				
+				<h2>Transit Diodes</h2>
+                exhaust: teleportiraj bilo gdje svoja do 4 ground forcesa
+            </td>
+            <td class="Red">
+				<h2>Duranium Armor</h2>
+                tokom fajta (svaki krug) popravi 1 brod koj nije upravo dobio hit
+            </td>
+            <td class="Green">
+				<h2>Hyper Metabolism</h2>
+                3 komand tokena mjesto 2 dobivas
+            </td>
+        </tr>
+        <tr>
+			<td>Lvl 4</td>
+            <td class="Blue">				
+				<h2>Light/Wave Deflector</h2>
+                mozes prolazit kroz sustave di su drugi brodovi
+            </td>
+            <td class="Yellow">				
+				<h2>Integrated Economy</h2>
+                kada dobijes planet mozes izgradit jedinica kolko planet ima resource-a
+            </td>
+            <td class="Red">
+				<h2>Assault Cannon</h2>
+                u fajtu ako imas 3+ non fighter broda protivnik mora unistit 1 non fighter
+            </td>
+            <td class="Green">
+				<h2>X-89 Bacterial weapon</h2>
+                exhaust: BOMBARDMENT brod pobije sve pjesake
+            </td>
+        </tr>
+    </table>
+	<br />
+	<input type="button" value="Complex/Simple" onclick="complexSimpleToggle()" />
+	
+<!--Light/Wave Deflector
+Your ships can move through systems that contain other player’s ships
+B/B/B
+N/A
+Fleet Logistics
+During each of your turns of the action phase, you may perform 2 actions instead of 1
+B/B
+N/A
+Gravity Drive
+After you activate a system, apply +1 to the move value of 1 of your ships during this tactical action
+B
+N/A
+Antimass Deflectors
+Your ships can move into and through asteroid fields
+When other players’ units use SPACE CANNON against your units, apply -1 to the result of each die roll.
+N/A
+N/A
+
+
+Integrated Economy
+After you gain control of a planet, you may produce any number of units on that planet that have a combined cost equal to or less than that planet’s resource value.
+Y/Y/Y
+N/A
+
+Transit Diodes
+You may exhaust this card at the start of your turn during the action phase; remove up to 4 of your ground forces from the game board and place them on 1 or more planets you control.
+Y/Y
+N/A
+Graviton Laser System
+You may exhaust this card before 1 or more of your units uses SPACE CANNON; hits produced by those units must be assigned to non-fighter ships if able.
+Y
+N/A
+Sarween Tools
+When 1 or more of your units use PRODUCTION, reduce the combined cost of the produced units by 1. 
+N/A
+N/A
+
+
+
+Assault Cannon
+At the start of a space combat in a system that contains 3 or more of your non-fighter ships, your opponent must destroy 1 of his non-fighter ships. 
+R/R/R
+N/A
+Duranium Armor
+During each combat round, after you assign hits to your units, repair 1 of your damaged units that did not use SUSTAIN DAMAGE during this combat round. 
+R/R
+N/A
+Magen Defense Grid
+You may exhaust this card at the start of a round of ground units that have PLANETARY SHIELD; your opponent cannot make combat rolls this combat round.
+R
+N/A
+Plasma Scoring
+When 1 or more of your units use BOMBARDMENT or SPACE CANNON, 1 of those rolls may roll 1 additional die
+N/A
+N/A
+
+
+X-89 Bacterial weapon
+ACTION: Exhaust this card and choose 1 planet in a system that contains 1 or more of your ships that have BOMBARDMENT; destroy all infantry on that planet. 
+G/G/G
+N/A
+Hyper Metabolism
+During the status phase, gain  2   3  command tokens instead of  1   2.
+G/G
+N/A
+Dacxive Animators
+After you win a ground combat, you may place 1 infantry from your reinforcements on that planet. 
+G
+N/A
+Neural Motivator
+During the status phase, draw 2 action cards instead of 1.
+N/A
+N/A-->
+
+
+
+<!--
+PoK
+
+	Dark Energy Tap
+    After you perform a tactical action in a system that contains a frontier token, if you have 1 or more ships in that system, explore that token
+    Your ships can retreat into adjacent systems that do not contain other players' units, even if you do not have units or control planets in that system.
+
+	Sling Relay
+    ACTION: Exhaust this card to produce 1 ship in any system that contains one of your space docks
+		
+	Scanlink Drone Network
+    When you activate a system, you may explore 1 planet in that system which contains 1 or more of your units
+
+	Predictive Intelligence
+    At the end of your turn, you may exhaust this card to redistribute your command tokens
+    When you cast votes during the agenda phase, you may cast 3 additional votes; if you do, and the outcome you voted for is not resolved, exhaust this card
+		
+	AI Development Algorithm
+    When you research a unit upgrade technology, you may exhaust this card to ignore any 1 prerequisite
+    When 1 or more of your units use Production, you may exhaust this card to reduce the combined cost of the produced units by the number of unit upgrade technologies that you own
+
+	Self Assembly Routines
+    After 1 or more of your units use PRODUCTION, you may exhaust this card to place 1 mech from your reinforcements on a planet you control in that system
+    After 1 of your mechs is destroyed, gain 1 trade good
+		
+	Psychoarchaeology
+    You can use technology specialties on planets you control without exhausting them, even if those planets are exhausted
+    During the Action Phase, you can exhaust planets you control that have technology specialties to gain 1 Trade Good
+	
+	Bio-Stims
+    You may exhaust this card at the end of your turn to ready 1 of your planets that has a technology specialty or 1 of your other technologies
+-->
+</body>
+</html>
